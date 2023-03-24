@@ -11,10 +11,10 @@ dotenv.config()
 app.use(express.json({ extended: true }))
 app.use(express.urlencoded({ extended: true }))
 
-app.use('/', articleRouter)
+app.use('/', articleRouter)  
 app.use('/', categoryRouter)
 
 
-const port = process.env.PORT
+const port = process.env.PORT || 3001 
 
 app.listen(port, () => console.log(`Server started at port ${port}`));  

@@ -44,7 +44,8 @@ export const articleEdit = async (req, res) => {
 
         const sqlUpdate = `UPDATE articles SET heading=?,read_time=?,description=?,categories=?,thumbnail_image=?,
         featured_image=? WHERE id = ?`;
-        connection.query(sqlUpdate, [heading, read_time, description, JSON.stringify(categories), thumbnail_image, featured_image,
+        connection.query(sqlUpdate, [heading, read_time, description, JSON.stringify(categories),
+        thumbnail_image, featured_image,
             id], (error, result) => {
                 if (error) {
                     console.log(error);

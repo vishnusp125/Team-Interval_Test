@@ -9,4 +9,4 @@ router.get('/api/categoryDetails', getDetails);
 
 
 
-export default router;  
+export default router;     

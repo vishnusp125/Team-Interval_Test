@@ -5,9 +5,9 @@ dotenv.config()
 
  const connection = mysql.createConnection({
     user: process.env.USER,
-    host: "localhost",
+    host: process.env.HOST,
     password: process.env.PASSWORD,
-    database: "team_interval"
+    database: process.env.DATABASE
 })
 
 connection.connect(function (err) {
@@ -32,7 +32,7 @@ connection.connect(function (err) {
             if (err) {
                 console.log(err);
             } else {  
-                console.log("Connected to SQL");
+                console.log("Connected to MySQL");
             }
         })
     }
@@ -46,7 +46,7 @@ connection.query(sql2, (err, result) => {
     if (err) {
         console.log(err);
     } else {
-        console.log("Categories table created successfully");
+        console.log("Table created successfully");
     }
 });
 
